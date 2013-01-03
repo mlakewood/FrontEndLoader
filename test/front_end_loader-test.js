@@ -9,9 +9,6 @@ buster.testCase("Front End Loader success", {
         assert.equals(front.version, 0.1);
 
         var list  = ["test_template", "test_template2"];
-        front.prefix = buster.env.contextPath + '/test/templates/';
-
-
 
         front.loader(list, function(){
             assert.equals(front.get("test_temp1"), "\n<div><p>test template<p></div>");
@@ -33,9 +30,6 @@ buster.testCase("Front End Loader success", {
         assert.equals(front.version, 0.1);
 
         var list  = ["test_template", "test_template2"];
-        front.prefix = buster.env.contextPath + '/test/templates/';
-
-
 
         front.loader(list, function(){
             assert.equals(front.get("test_temp1"), "<div><p>test template<p></div>");
@@ -44,5 +38,5 @@ buster.testCase("Front End Loader success", {
             done();
         });
 
-    }
+    },
 })

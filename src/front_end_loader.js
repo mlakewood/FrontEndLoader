@@ -36,7 +36,7 @@ var Front = function(config){
             var request = $.get(_prefix + name + _extension)
 
             request.success(function(data, status, jqXHR) {
-                _parseFile(data, self);
+                _parseFile(data, name, self);
                 index++;
                 if (index < names.length) {
                     loadTemplate(index);
@@ -52,9 +52,10 @@ var Front = function(config){
         loadTemplate(0);
     };
 
-    function _parseFile(text, self){
+    function _parseFile(text, name, self){
         var template = {};
         var templateStart = 0;
+        var templateCount = 0;
         
         // As we have multiple places where the template gets pushing into
         // the data structure, this is the function to call to do that.
@@ -65,6 +66,7 @@ var Front = function(config){
             }else{
                 self.templates[template.name] = template.contents;
             }
+            templateCount++;
         }
 
         for(var i = 0; i < text.length; i++){
@@ -96,6 +98,10 @@ var Front = function(config){
         // So add the rest of the text to the last known name
         if(template.name != undefined){
             _saveContents();
+        }
+
+        if(templateCount === 0){
+            throw new Error("No eyeCatcher found in template " + name);
         }
     }
 
