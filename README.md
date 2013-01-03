@@ -16,11 +16,12 @@ Show me the templates??
 So and example.
 
 His is a simple template
-
+`
 @@simple_template;
 <div>
     <p>Hello World</p>
 </div>
+`
 
 You'll notice the line "@@simple_template;" at the top of the file. Every template must have a line like this. It determines the name of the template to be used
 when retrieving it from the Front End Loader object.
