@@ -63,7 +63,7 @@ There is minimal configuration needed. They are
  - eyeCatcherTerm: The sequence of characters that is used to determine that the eyecatcher has finished. In the case above it is ';'
 
 With an optional:
- - Trim: defaults to false. Setting to true trims whitespace off the start and end of the template (uses Trim() javascript function, May not be available everywhere)
+ - trim: defaults to false. Setting to true trims whitespace off the start and end of the template (uses Trim() javascript function, May not be available everywhere)
 
 Once you have loaded all templates you can then get them out of the object by calling the `get()` method as shown above.
 
