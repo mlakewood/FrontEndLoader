@@ -54,13 +54,16 @@ And here is what a simple index.html file would look like
 
 There is minimal configuration needed. They are
 
-path: This is the path where all your templates can be found
+ - path: This is the path where all your templates can be found
 
-extension: The extension used by all your templates
+ - extension: The extension used by all your templates
 
-eyeCatcherStart: The sequence of characters that is used to determine that this is the start of the eyeCatcher. In the Case above it is the characters "@@"
+ - eyeCatcherStart: The sequence of characters that is used to determine that this is the start of the eyeCatcher. In the Case above it is the characters "@@"
 
-eyeCatcherTerm: The sequence of characters that is used to determine that the eyecatcher has finished. In the case above it is ';'
+ - eyeCatcherTerm: The sequence of characters that is used to determine that the eyecatcher has finished. In the case above it is ';'
+
+With an optional:
+ - Trim: defaults to false. Setting to true trims whitespace off the start and end of the template (uses Trim() javascript function, May not be available everywhere)
 
 Once you have loaded all templates you can then get them out of the object by calling the `get()` method as shown above.
 
