@@ -5,10 +5,10 @@ config["Front End Loader tests"] = {
     rootPath: "../",
     sources: [
         "src/front_end_loader.js",    // Paths are relative to config file
-        "test/libs/jquery/1.8.3/jquery.js"
+        "test/libs/jquery/1.8.3/jquery.js",
     ],
     tests: [
-        "test/*-test.js",
-        "test/templates/*"
-    ]
+        "test/*-test.js"
+    ],
+    resources: ["test/templates/*"]
 };
