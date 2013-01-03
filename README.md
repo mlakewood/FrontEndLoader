@@ -35,7 +35,7 @@ And here is what a simple index.html file would look like
     <body>
         <script type="text/javascript">
             $(document).ready(function(){
-                var front = Front({pref: 'static/templates/', 
+                var front = Front({path: 'static/templates/', 
                            extension: ".html",
                            eyeCatcherStart: "@@",
                            eyeCatcherTerm: ";"
@@ -52,7 +52,7 @@ And here is what a simple index.html file would look like
 
 There is minimal configuration needed. They are
 
-pref: This is the path where all your templates can be found
+path: This is the path where all your templates can be found
 
 extension: The extension used by all your templates
 

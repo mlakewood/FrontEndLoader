@@ -1,6 +1,6 @@
 buster.testCase("Front End Loader success", {
     "test_success": function(done){
-        var front = Front({pref: buster.env.contextPath + '/test/templates/', 
+        var front = Front({path: buster.env.contextPath + '/test/templates/', 
                            extension: ".html",
                            eyeCatcherStart: "@@",
                            eyeCatcherTerm: ";"
@@ -20,7 +20,7 @@ buster.testCase("Front End Loader success", {
     },
 
     "test_success_trim": function(done){
-        var front = Front({pref: buster.env.contextPath + '/test/templates/', 
+        var front = Front({path: buster.env.contextPath + '/test/templates/', 
                            extension: ".html",
                            eyeCatcherStart: "@@",
                            eyeCatcherTerm: ";",

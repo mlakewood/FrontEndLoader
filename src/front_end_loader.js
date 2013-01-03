@@ -16,7 +16,7 @@ var Front = function(config){
 
     var _templates = {};
 
-    var _prefix = config.pref;
+    var _path = config.path;
     var _extension = config.extension;
     var _eyeCatcherStart = config.eyeCatcherStart;
     var _eyeCatcherTerm = config.eyeCatcherTerm;
@@ -33,7 +33,7 @@ var Front = function(config){
             var name = names[index];
             
 
-            var request = $.get(_prefix + name + _extension)
+            var request = $.get(_path + name + _extension)
 
             request.success(function(data, status, jqXHR) {
                 _parseFile(data, name, self);
@@ -117,7 +117,7 @@ var Front = function(config){
     return {
         version: _version,
         templates: _templates,
-        prefix: _prefix,
+        path: _path,
         extension: _extension,
         eyeCatcherStart: _eyeCatcherStart,
         eyeCatcherTerm: _eyeCatcherTerm,
