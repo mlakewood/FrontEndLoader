@@ -33,7 +33,7 @@ var Front = function(config){
             var name = names[index];
             
 
-            var request = $.get(_path + name + _extension)
+            var request = $.get(_path + name + _extension);
 
             request.success(function(data, status, jqXHR) {
                 _parseFile(data, name, self);
@@ -50,30 +50,30 @@ var Front = function(config){
         };
  
         loadTemplate(0);
-    };
+    }
 
     function _parseFile(text, name, self){
         var template = {};
         var templateStart = 0;
         var templateCount = 0;
         
-        // As we have multiple places where the template gets pushing into
+        // As we have multiple places where the template gets pushed into
         // the data structure, this is the function to call to do that.
         var _saveContents = function(){
             template.contents = text.substring(templateStart, i);
             if(self.trim === true){
-                self.templates[template.name] = template.contents.trim(); 
+                self.templates[template.name.replace(_extension, '')] = template.contents.trim();
             }else{
-                self.templates[template.name] = template.contents;
+                self.templates[template.name.replace(_extension, '')] = template.contents;
             }
             templateCount++;
-        }
+        };
 
         for(var i = 0; i < text.length; i++){
             // is this the start of the eyeCatcher
             if(text.substr(i, _eyeCatcherStart.length) === _eyeCatcherStart){
                 // if this is not the first template we have come across save the template away
-                if(template.name != undefined){
+                if(template.name !== undefined){
                     _saveContents();
                 }
 
@@ -96,7 +96,14 @@ var Front = function(config){
         }
         // The last template will not be populated because we dont hit the eyeCatcher again,
         // So add the rest of the text to the last known name
-        if(template.name != undefined){
+        if(template.name !== undefined){
+            _saveContents();
+        }
+
+        // We havent incountered an eye catcher so its just a file with a template
+        if(template.name === undefined && template.contents === undefined){
+            template.name = name;
+            template.contents = text;
             _saveContents();
         }
 
