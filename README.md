@@ -41,7 +41,7 @@ And here is what a simple index.html file would look like
                            eyeCatcherStart: "@@",
                            eyeCatcherTerm: ";"
                        });)
-                front(['home_template', 'nav_template'], function(){
+                front.loader(['home_template', 'nav_template'], function(){
                     app.start();
                     console.log(front.get('simple_template'));
                 })
