@@ -8,12 +8,12 @@ This library allows the easy loading of all front end templates at one time, but
 After loading all the templates, its as easy as calling the libraries `get()` method and passing in the template name, and it will be immediatly fetched from memory instead of asynchronously across the wire.
 This means your view code (or however you normally get your templates) is much simpler at a slight upfront cost of load time and memory.
 
-The load time is also offset by the library in that you can concatenate all your tempaltes into one file and only load that. The library given the right eye catcher and terminator will then parse out each template as normal. This means in developement you can have all your templates split up, and in production have them all in the same file.
+The load time is also offset by the library in that you can concatenate all your templates into one file and only load that. The library given the right eye catcher and terminator will then parse out each template as normal. This means in developement you can have all your templates split up, and in production have them all in the same file.
 
 Show me the templates??
 -----------------------
 
-So and example.
+So an example.
 
 His is a simple template
 ```
